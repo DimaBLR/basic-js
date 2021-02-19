@@ -2,7 +2,7 @@ const CustomError = require("../extensions/custom-error");
 
 module.exports = function getSeason(date) {
     if (!arguments.length) return 'Unable to determine the time of year!';
-    if (Object.prototype.toString.call(date) !== '[object Date]') throw new CustomError('Not implemented');
+    if (Object.prototype.toString.call(date) !== '[object Date]') throw new Error('Not implemented');
     let month = date.getMonth();
     if (month == 11 || month == 0 || month == 1) return 'winter';
     if (month > 1 && month < 5) return 'spring';
